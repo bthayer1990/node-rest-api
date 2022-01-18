@@ -2,7 +2,7 @@ import express from 'express';
 import usersService from '../../users/services/users.service';
 import * as argon2 from 'argon2';
 
-class AuthMiddlware {
+class AuthMiddleware {
     async verifyUserPassword(
         req: express.Request,
         res: express.Response,
@@ -28,4 +28,4 @@ class AuthMiddlware {
     }
 }
 
-export default new AuthMiddlware();
+export default new AuthMiddleware();
