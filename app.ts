@@ -8,6 +8,7 @@ import {CommonRoutesConfig} from './common/common.routes.config';
 import {UsersRoutes} from './users/users.routes.config';
 import { AuthRoutes } from './auth/auth.routes.config';
 import debug from 'debug';
+import helmet from 'helmet';
 import dotenv from 'dotenv';
 const dotenvResult = dotenv.config();
 if (dotenvResult.error) {
@@ -46,6 +47,8 @@ if (!process.env.DEBUG) {
 
 // initialize the logger with the above configuration
 app.use(expressWinston.logger(loggerOptions));
+
+app.use(helmet());
 
 // here we are adding the UserRoutes to our array,
 // after sending the Express.js application object to have the routes added to our app!
