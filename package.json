@@ -4,6 +4,7 @@
   "description": "example rest api",
   "main": "dist/app.js",
   "scripts": {
+    "build": "tsc",
     "start": "tsc && node --unhandled-rejections=strict ./dist/app.js",
     "debug": "SET DEBUG=* && npm run start",
     "test": "mocha -r ts-node/register 'test/**/*.test.ts' --unhandled-rejections=strict",
